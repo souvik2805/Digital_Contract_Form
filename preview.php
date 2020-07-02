@@ -1,81 +1,48 @@
 <?php
 require('random_string.php');
 
-// $advertiser='Cri';
-// $address ='';
-// $city ='';
-// $pin = '';
-// $designation='';
-// $primary_phone='';
-// $mobile='';
-// $full_name='';
-// $email_id ='';
-// $contract_date='';
-// $sales_person='';
-// $special_billing='-';
-// $reporting_email_id ='';
-// $website ='';
-// $customer_pan_no ='';
-// $customer_gstin_no ='';
-
-$advertiser='Crisp Digital india Limeinted...';
-$address ='1, Chandital Lane 2./ Kanl Mal malaua int thrr 89096';
-$city ='Viskreupjkdntmriofdpo ';
-$pin = '07415014775';
-$designation='Authorized Signatory';
-$primary_phone='83293871589364';
-$mobile='547825568432985';
-$full_name='Mr Kriam KLumver Randioejet ';
-$email_id ='heoldydfnmndyhreiunm@gmail.com';
-$contract_date='28/05/1998';
-$sales_person='Pjfdfydln pnmdyhjekm';
-$special_billing='djkhdsflkdsf kjsddffjosddfl sdffjsdfksddf dsffmedwdfj';
-$reporting_email_id ='lkddjhopdffkmsdfkjo ,soddffmkjdfm@klsdfjsdfl';
-$website ='ww.jsdfjkhsdfkjsdfdkjdf.com,';
-$customer_pan_no ='NGTROL765';
-$customer_gstin_no ='KJJH607855kjojid';
+$advertiser='';
+$address ='';
+$city ='';
+$pin = '';
+$designation='';
+$primary_phone='';
+$mobile='';
+$full_name='';
+$email_id ='';
+$contract_date='';
+$sales_person='';
+$special_billing='-';
+$reporting_email_id ='';
+$website ='';
+$customer_pan_no ='';
+$customer_gstin_no ='';
 
 
-// $product_service_1 = "--";
-// $description_1     = "--";
-// $product_service_rate_1='0'; 
-
-// $product_service_2 = "--";
-// $description_2     = "--";
-// $product_service_rate_2='0'; 
-
-// $product_service_3 = "--";
-// $description_3     = "--";
-// $product_service_rate_3='0'; 
-
-// $product_service_4 = "--";
-// $description_4     = "--";
-// $product_service_rate_4='0'; 
-
-// $product_service_5 = "--";
-// $description_5     = "--";
-// $product_service_rate_5='0'; 
 
 
 $product_service_1 = "--";
-$description_1     = "This is descripition ione thind the his is descripition ione thind thhis is descripition ione thind th field of the about the anand this is called";
+$description_1     = "--";
 $product_service_rate_1='0'; 
 
 $product_service_2 = "--";
-$description_2     = "This is descripition ione thind the his is descripition ione thind thhis is descripition ione thind th field of the about the anand this is called";
+$description_2     = "--";
 $product_service_rate_2='0'; 
 
 $product_service_3 = "--";
-$description_3     = "This is descripition ione thind the his is descripition ione thind thhis is descripition ione thind th field of the about the anand this is called";
+$description_3     = "--";
 $product_service_rate_3='0'; 
 
 $product_service_4 = "--";
-$description_4     = "This is descripition ione thind the his is descripition ione thind thhis is descripition ione thind th field of the about the anand this is called";
+$description_4     = "--";
 $product_service_rate_4='0'; 
 
 $product_service_5 = "--";
 $description_5     = "--";
 $product_service_rate_5='0'; 
+
+
+
 
 $management_fees="";
 $total          = "";
@@ -97,20 +64,19 @@ $c_manager_name   = "";
 
 if(isset($_POST)){
 
-	
+      $signature='0';
+	  $stamp ='0';
+    if($_FILES["file_1"]["size"]>0 && $_FILES["file_2"]["size"]>0){
+        $target_dir ='assets/upload_image/';
+        $target_file1 = $target_dir . basename($_FILES["file_1"]["name"]);
+        $target_file2 = $target_dir . basename($_FILES["file_2"]["name"]);
+        move_uploaded_file($_FILES["file_1"]["tmp_name"], $target_file1);
+        move_uploaded_file($_FILES["file_2"]["tmp_name"], $target_file2);
 
-    $target_dir ='assets/upload_image/';
-
-
-    $target_file1 = $target_dir . basename($_FILES["file_1"]["name"]);
-    $target_file2 = $target_dir . basename($_FILES["file_2"]["name"]);
-    move_uploaded_file($_FILES["file_1"]["tmp_name"], $target_file1);
-    move_uploaded_file($_FILES["file_2"]["tmp_name"], $target_file2);
-
-
-
-    $signature = $target_dir.$_FILES["file_1"]["name"];
-	$stamp     = $target_dir.$_FILES["file_2"]["name"];
+        $signature = $target_dir.$_FILES["file_1"]["name"];
+    	$stamp     = $target_dir.$_FILES["file_2"]["name"];
+      
+    }
 
  
 
@@ -124,9 +90,6 @@ if(isset($_POST['address'])){
 $address    = $_POST['address'];	
 }
 
-if(isset($_POST['address'])){
- $advertiser = $_POST['address'];	
-}
 
 if(isset($_POST['city'])){
  $city= $_POST['city'];	
@@ -203,7 +166,7 @@ $product_service_rate_1 = "  ".$_POST['product_service_rate_1'];
 
 // ----------------------------------------------------------------------->
 if(isset($_POST['product_service_2']) && $_POST['product_service_2'] !="0"){ 
- $product_service_2= $_POST['product_service_2'];
+ $product_service_2="II. ".$_POST['product_service_2'];
 }
 
 if(isset($_POST['description_2'])){ 
@@ -216,7 +179,7 @@ if(isset($_POST['product_service_rate_2'])){
 // ------------------------------------------------------------------------>
 
 if(isset($_POST['product_service_3']) && $_POST['product_service_3'] !="0"){ 
- $product_service_3= $_POST['product_service_3'];
+ $product_service_3="III. ". $_POST['product_service_3'];
 }
 
 if(isset($_POST['description_3'])){ 
@@ -229,7 +192,7 @@ if(isset($_POST['product_service_rate_3'])){
 // --------------------------------------------------------------------------->
 
 if(isset($_POST['product_service_4']) && $_POST['product_service_4'] !="0"){ 
- $product_service_4= $_POST['product_service_4'];
+ $product_service_4= "IV. ".$_POST['product_service_4'];
 }
 
 if(isset($_POST['description_4'])){ 
@@ -243,7 +206,7 @@ if(isset($_POST['product_service_rate_4'])){
 // -------------------------------------------------------------------------->
 
 if(isset($_POST['product_service_5']) && $_POST['product_service_5'] !="0"){ 
- $product_service_5= $_POST['product_service_5'];
+ $product_service_5= "V. ".$_POST['product_service_5'];
 }
 
 if(isset($_POST['description_5'])){ 
@@ -298,14 +261,6 @@ $c_amount = $_POST['c_amount'];
 if(isset($_POST['c_manager_name'])){ 
 $c_manager_name= $_POST['c_manager_name'];
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -712,14 +667,19 @@ $y=$pdf->GetY();
 $pdf->SetDrawColor(10, 100, 100);
 $pdf->SetFont('Arial','B',10);
 
+if($signature !="0" && $stamp !="0"){
 
 $pdf->Cell(188, 40, " ", 1, 1, 'C',$pdf->Image( $stamp,41,$y,40,40));
 
 
-// $img1 = 'assets/image/gp-all.PNG';
+
 $pdf->Cell(188, 5, "AUTHORISED SIGNATURE                                                    	COMPANY'S STAMP", 1, 1, 'C',$pdf->Image($signature,132,$y,40,40));
 
-
+}
+else{
+    $pdf->SetTextColor(255, 0, 0);
+    $pdf->Cell(188 ,7,"Unable to Upload Stamp & Signature." ,1,1,'C');
+}
 
 
 

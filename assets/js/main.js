@@ -1,6 +1,6 @@
-// $(function() {
-//         $("#form").validationEngine();
-//   })
+$(function() {
+        $("#form").validationEngine();
+  })
  function confirm_reset() {
     return confirm("Are you sure you want to reset all text?");
 }
@@ -130,7 +130,7 @@ function preview_image2(event) {
 
 
 
-var resultData=["Responsive Website","Landing Page","E Commerce Website","Website Renewal ","Landing Page Renewal","E Commerce Website Renewal","Google Ads – Search","Google Ads – Display","Google Ads- Remarketing","Google My Business Page","Google Search Engine Optimisation (SEO)","Facebook Commercial Page Management","Instagram Commercial Page Management","Twitter Commercial Page Management","LinkedIn Commercial Page Management","Printrest Commercial Page Management","Facebook Sponsored Promotion","Instagram Sponsored Promotion","Twitter Sponsored Promotion","LinkedIn Sponsored Promotion","Printrest Sponsored Promotion","YouTube Marketing","Leads Based Marketing","Email Creation","SSL Certificate","Additional Page Creation"];
+var resultData=["Responsive Website","Landing Page","E Commerce Website","Website Renewal ","Landing Page Renewal","E Commerce Website Renewal","Google Ads - Search","Google Ads - Display","Google Ads - Remarketing","Google My Business Page","Google Search Engine Optimisation (SEO)","Facebook Commercial Page Management","Instagram Commercial Page Management","Twitter Commercial Page Management","LinkedIn Commercial Page Management","Printrest Commercial Page Management","Facebook Sponsored Promotion","Instagram Sponsored Promotion","Twitter Sponsored Promotion","LinkedIn Sponsored Promotion","Printrest Sponsored Promotion","YouTube Marketing","Leads Based Marketing","Email Creation","SSL Certificate","Additional Page Creation"];
    var myselect = $('<select>');
      $.each(resultData, function(index, key) {
        myselect.append( $('<option></option>').val(key).html(key) );

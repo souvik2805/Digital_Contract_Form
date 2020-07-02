@@ -26,7 +26,7 @@
           <li class="nav-item">
             <div class="nav-link" href="#" style="padding:0px;">
               <ul class="list-unstyled" style="color: black;">
-                <li>Crisp Digital India Private Limited</li>
+                <li><b>Crisp Digital India Private Limited</b></li>
                 <li>216 SF, Sushant Tower, Sushant Lok-II</li>
                 <li>Gurgaon - 122011, Tel: 0124-4867430</li>
                 <li>CIN: U74999HR2017PTC069087</li>
@@ -57,7 +57,7 @@
       <div class="card-body">
     
 
-         <form  autocomplete="off" action="pdf2.php" id="form" method="POST"  enctype="multipart/form-data"> 
+         <form  autocomplete="off" action="submit_pdf_send_email.php" id="form" method="POST"  enctype="multipart/form-data"> 
       
             <div class="form-group">
                 <label class="label" for="advertiser">1. advertiser / company name</label>
@@ -446,12 +446,11 @@ Crisp Digital India Private Limited" data-errormessage-value-missing="Advertiser
                             <br><br>
                              Crisp Digital India Private Limited will not provide any kind of access for Google Ads Account, backup of Ads except the daily report to client under any circumstances.  
                      </p>
-                   
                   </div>
                   
                   <div class="col-md-11" style="padding-left: 20px;color: blue;font-size: 18px;;">
-                     <input type="checkbox"  required="">
-                       <label for="vehicle1">I understand, accept, and agree to the following terms and conditions </label><br>
+                     <input type="checkbox" required="" >
+                       <label >I understand, accept, and agree to the following terms and conditions </label><br>
                   </div>
 
                        
@@ -474,7 +473,7 @@ Crisp Digital India Private Limited" data-errormessage-value-missing="Advertiser
 
                     <label class="label" for="inputState">Company's Stamp</label><br>
                     
-                    <input type="file" class="validate[required]" name="file_2"  accept="image/*" onchange="preview_image2(event)" data-errormessage-value-missing="Company's Stamp is required*" data-prompt-position="bottomLeft" required="">
+                    <input type="file" class="validate[required]" name="file_2"  accept="image/*" onchange="preview_image2(event)" data-errormessage-value-missing="Company's Stamp is required*" data-prompt-position="bottomLeft" required="" >
                     <img id="output_image2"/>
                 </div>   
             </div>  
@@ -490,14 +489,14 @@ Crisp Digital India Private Limited" data-errormessage-value-missing="Advertiser
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          
 
-            <button type="submit"  class="btn btn-primary" id="liquidacion_save" name="liquidacion[save]" onclick="$('form').attr('target', '');">
+            <button type="submit"  class="btn btn-primary" id="liquidacion_save" name="liquidacion[save]" onclick="$('form').attr('target', '');$('form').attr('action', 'submit_pdf_send_email.php');">
             Submit
             </button>
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-                <button type="submit" class="btn btn-success" id="liquidacion_Previsualizar" name="liquidacion[Previsualizar]" onclick="$('form').attr('target', '_blank');">Preview</button>
+                <button type="submit" class="btn btn-success" id="liquidacion_Previsualizar" name="Preview" onclick="$('form').attr('target', '_blank');$('form').attr('action', 'preview.php');">Preview</button>
              
 
          
