@@ -706,7 +706,7 @@ $pdf->Output('F', $filename, true);
 		$mail->Port = 465;							//Sets the default SMTP server port
 		$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
 		$mail->Username = 'souvik2805@gmail.com';					//Sets SMTP username
-		$mail->Password = 'shreshtha';					//Sets SMTP password
+		$mail->Password = '**********************************';					//Sets SMTP password
 		$mail->SMTPSecure = 'ssl';							//Sets connection prefix. Options are "", "ssl" or "tls"
 		$mail->From ='souvik2805@gmail.com';		//Sets the From email address for the message
 		
